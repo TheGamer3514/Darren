@@ -26,7 +26,7 @@ async def on_message(message):
             uid = message.author.id
             msg = message.content
             noresponse = "I Do Not Seem To Understand! I Only Understand Text!\n*If You Only Sent Text Then Report This To Gamer3514#7679*"
-            errorembed = discord.Embed(title="Darren - Error", description="An Error Has Occured! Please try again later!", color=discord.Color.red())
+            errorembed = discord.Embed(title="Darren - Error", description="An Error Has Occured! Please try again later!\n*If This Error Persists Then Report This To Gamer3514#7679*", color=discord.Color.red())
             if 'ping' in message.content:
                 return await message.channel.send(f'🏓 Pong : `{round(client.latency * 1000)}ms`')
             if not message.content:
