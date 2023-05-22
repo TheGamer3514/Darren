@@ -18,6 +18,7 @@ Make a pull request and we will check over it! Darren is perfect so i don't see 
 ![Image3](https://user-images.githubusercontent.com/79448904/205361542-c4bb9605-96f2-44a9-9bb4-277d5cad81d0.png)
 ![Image4](https://user-images.githubusercontent.com/79448904/205361593-8a34c610-51e0-4384-acde-fedd82e45970.png)
 
-# Links:
-- [Discord Server](https://discord.gg/3qvpkgWSbF)
+# Links
+- [Free Hosting](https://panel.sillydev.co.uk)
+- [Discord](https://discord.gg/WeQ3TpdfZM)
 - gamer@sillydev.co.uk
