@@ -3,7 +3,6 @@ const fetch = require("node-fetch");
 const config = require("./config.js");
 const client = new Discord.Client();
 client.login(config.token);
-
 client.on("ready", () => {
   console.log(`Darren has been forced awake`);
   client.user.setActivity(`Human Chat Simulator`);
