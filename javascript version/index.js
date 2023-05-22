@@ -35,7 +35,7 @@ client.on("message", async (message) => {
       message.channel.send(`> ${message.content} \n <@${message.author.id}> ${data.cnt}`);
     } catch (error) {
       console.error("API error:", error);
-      message.channel.send(`<@${message.author.id}> ${errorresponse}`);
+      message.channel.send(`<@${message.author.id}> ${errorresponse}`); //send error message
 
     }
   }
