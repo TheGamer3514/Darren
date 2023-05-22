@@ -8,19 +8,6 @@ client.on("ready", () => {
   console.log(`Darren has been forced awake`);
   client.user.setActivity(`Human Chat Simulator`);
 });
-
-const express = require('express')
-const app = express()
-const port = 25708
-
-app.get('/', (req, res) => {
-  res.send('Hello World! Darren is the best!')
-})
-
-app.listen(port, () => {
-  console.log(`Darren Website @ https://darren.sillydev.co.uk`)
-})
-
 client.on("message", async (message) => {
   if (
     message.channel.id == 936309442612441109 ||
