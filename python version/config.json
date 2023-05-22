@@ -1,0 +1,9 @@
+{
+    "botConfig": [
+        {
+            "bottoken": "discord bot token",
+            "bid": "brainshop.ai brain id",
+            "key": "brainshop.ai brain key"
+         }
+    ]
+}
