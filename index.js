@@ -13,7 +13,8 @@ client.on("message", async (message) => {
     message.channel.id == 936309442612441109 ||
     message.channel.id == 1028052690883854376 ||
     message.channel.id == 1030482298526765106 ||
-    message.channel.id == 1030900448036663399
+    message.channel.id == 1056562316864393367 ||
+    message.channel.id == 1030900448036663399 
   ) {
     // Replace Current Channel Ids With Your Own! These channels are where darren will work.
     if (message.author.bot) return;
@@ -22,9 +23,10 @@ client.on("message", async (message) => {
     let uid = message.author.id;
     let msg = message.content;
     let noresponse = "I Do Not Seem To Understand! I Only Understand Text!\n*If You Only Sent Text Then Report This To Gamer3514#7679*";
-
+    if (message.content.includes(`ping`)) {
+		return message.channel.send(`🏓 Pong : \`${Math.floor(message.client.ws.ping)}ms\``);
+ 	}
     if (!message.content) return message.channel.send(`<@${message.author.id}> ${noresponse}`);
-
     try {
       const response = await fetch(`http://api.brainshop.ai/get?bid=${bid}&key=${key}&uid=${uid}&msg=${msg}`);
       const data = await response.json();
