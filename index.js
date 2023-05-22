@@ -36,16 +36,15 @@ client.on("message", async (message) => {
     let msg = message.content;
     let noresponse = "I Do Not Seem To Understand! I Only Understand Text!\n*If You Only Sent Text Then Report This To Gamer3514#7679*";
 
-    if (!message.content) return message.channel.send(`:christmas_tree: Merry Christmas! Stay Safe Out There! :christmas_tree: \n<@${message.author.id}> ${noresponse}`);
+    if (!message.content) return message.channel.send(`<@${message.author.id}> ${noresponse}`);
 
     try {
       const response = await fetch(`http://api.brainshop.ai/get?bid=${bid}&key=${key}&uid=${uid}&msg=${msg}`);
       const data = await response.json();
       if (data.cnt.length > 1950) return;
-      message.channel.send(`:christmas_tree: Merry Christmas! Stay Safe Out There! :christmas_tree: \n > ${message.content} \n <@${message.author.id}> ${data.cnt}`);
+      message.channel.send(`> ${message.content} \n <@${message.author.id}> ${data.cnt}`);
     } catch (error) {
       console.error("API error:", error);
-      // Handle the error here (e.g., send an error message to the channel)
     }
   }
 });
