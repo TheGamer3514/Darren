@@ -9,7 +9,7 @@ with path.open('r') as f:
   for c in data['botConfig']:
         token = c['bottoken']
 intents = discord.Intents.all()
-client = discord.Client(intents=intents, activity=discord.Activity(name="Booting..."), help_command=None)
+client = discord.Client(intents=intents, activity=discord.Activity(name="Slowly Booting..."), help_command=None)
 @client.event
 async def on_ready():
     print('Darren has been forced awake')
