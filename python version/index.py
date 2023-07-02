@@ -25,17 +25,18 @@ async def on_message(message):
             key = c['key']
             uid = message.author.id
             msg = message.content
-            noresponse = "I Do Not Seem To Understand! I Only Understand Text!\n*If You Only Sent Text Then Report This To Gamer3514#7679*"
-            errorembed = discord.Embed(title="Darren - Error", description="An Error Has Occured! Please try again later!\n*If This Error Persists Then Report This To Gamer3514#7679*", color=discord.Color.red())
-            if 'ping' in message.content:
-                return await message.channel.send(f'🏓 Pong : `{round(client.latency * 1000)}ms`')
+            if '<@' in message.content:
+                return await message.reply('Please Do Not Ping People!',mention_author=True)
+            noresponse = "I Do Not Seem To Understand! I Only Understand Text!\n*If You Only Sent Text Then Report This To Gamer3514*"
+            if 'ping' == message.content:
+                return await message.reply(f'🏓 Pong : `{round(client.latency * 1000)}ms`',mention_author=True)
             if not message.content:
-                await message.channel.send(f'<@{message.author.id}> {noresponse}')
-                return
+                return await message.reply(noresponse,mention_author=True)
             response = requests.get(f'http://api.brainshop.ai/get?bid={bid}&key={key}&uid={uid}&msg={msg}')
             data = response.json()
-            await message.channel.send(f'> {message.content}\n<@{message.author.id}> {data["cnt"]}')
+            await message.reply(f'{data["cnt"]}',mention_author=True)
         except Exception as error:
+            errorembed = discord.Embed(title="Darren - Error", description="An Error Has Occured! Please try again later!\n*If This Error Persists Then Report This To Gamer3514*", color=discord.Color.red())
             print("API error:", error)
-            await message.channel.send(embed=errorembed)
+            await message.reply(embed=errorembed,mention_author=True)
 client.run(token)
